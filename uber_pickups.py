@@ -4,7 +4,7 @@ import numpy as np
 
 st.title('Uber pickups in NYC')
 
-'''DATE_COLUMN = 'date/time'
+DATE_COLUMN = 'date/time'
 DATA_URL=('https://s3-us-west-2.amazonaws.com/'
          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
@@ -23,6 +23,7 @@ data = load_data(10000)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Done! (using st.cache)")
 
+'''
 st.subheader('Raw data')
 st.write(data)
 
