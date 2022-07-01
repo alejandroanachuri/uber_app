@@ -5,8 +5,10 @@ import numpy as np
 st.title('Uber pickups in NYC')
 
 DATE_COLUMN = 'date/time'
-DATA_URL=('https://s3-us-west-2.amazonaws.com/'
-         'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+#DATA_URL=('https://s3-us-west-2.amazonaws.com/'
+#         'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+
+DATA_URL = 'https://raw.githubusercontent.com/fivethirtyeight/uber-tlc-foil-response/master/uber-trip-data/uber-raw-data-apr14.csv'
 
 @st.cache
 def load_data(nrows):
@@ -23,7 +25,7 @@ data = load_data(10000)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Done! (using st.cache)")
 
-'''
+
 st.subheader('Raw data')
 st.write(data)
 
@@ -37,4 +39,3 @@ hour_to_filter = st.slider('hour', 0, 23, 17)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 st.subheader(f'Map of all pickups at {hour_to_filter}:00')
 st.map(filtered_data)
-'''
